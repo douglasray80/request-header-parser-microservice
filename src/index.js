@@ -11,6 +11,10 @@ app.get('/', (req, res) => {
 })
 
 app.get('/api/whoami', (req, res) => {
+	// request client ip address
+	const ipaddress = req.ip
+
+	console.log(req.headers)
 	/* example output
 	{
 		"ipaddress":"159.20.14.100",
@@ -18,7 +22,7 @@ app.get('/api/whoami', (req, res) => {
 		"software":"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:50.0) Gecko/20100101 Firefox/50.0"
 	}
 	*/
-	res.json({ ipaddress: '', language: '', software: '' })
+	res.json({ ipaddress, language: '', software: '' })
 })
 
 const listener = app.listen(process.env.PORT || 4000, () => {
