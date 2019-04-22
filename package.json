@@ -1,0 +1,23 @@
+{
+	"name": "request-header-parser-microservice",
+	"version": "1.0.0",
+	"description": "freecodecamp - api and microservices projects",
+	"main": "index.js",
+	"scripts": {
+		"dev": "nodemon src/index.js",
+		"start": "node src/index.js"
+	},
+	"keywords": [
+		"node",
+		"express"
+	],
+	"author": "Douglas Ray",
+	"license": "ISC",
+	"dependencies": {
+		"cors": "^2.8.5",
+		"express": "^4.16.4"
+	},
+	"devDependencies": {
+		"nodemon": "^1.18.11"
+	}
+}
