@@ -10,8 +10,15 @@ app.get('/', (req, res) => {
 	res.sendFile(__dirname + 'index.html')
 })
 
-app.get('/api/hello', (req, res) => {
-	res.json({ greeting: 'hello API' })
+app.get('/api/whoami', (req, res) => {
+	/* example output
+	{
+		"ipaddress":"159.20.14.100",
+		"language":"en-US,en;q=0.5", 
+		"software":"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:50.0) Gecko/20100101 Firefox/50.0"
+	}
+	*/
+	res.json({ ipaddress: '', language: '', software: '' })
 })
 
 const listener = app.listen(process.env.PORT || 4000, () => {
