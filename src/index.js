@@ -13,6 +13,8 @@ app.get('/', (req, res) => {
 app.get('/api/whoami', (req, res) => {
 	// request client ip address
 	const ipaddress = req.ip
+	// client accepted language
+	const language = req.headers['accept-language']
 
 	console.log(req.headers)
 	/* example output
@@ -22,7 +24,7 @@ app.get('/api/whoami', (req, res) => {
 		"software":"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:50.0) Gecko/20100101 Firefox/50.0"
 	}
 	*/
-	res.json({ ipaddress, language: '', software: '' })
+	res.json({ ipaddress, language, software: '' })
 })
 
 const listener = app.listen(process.env.PORT || 4000, () => {
